@@ -13,7 +13,7 @@ import { throttle } from 'lodash';
   selector: 'app',
   encapsulation: ViewEncapsulation.None,
   styleUrls: [
-    './app.container.css',
+    './app.container.scss',
   ],
   templateUrl:'./app.container.html'
 })
