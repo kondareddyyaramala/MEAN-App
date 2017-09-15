@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 
 import { LoginContainer } from '../containers/login';
+import { NewsLandingPageContainer } from '../containers/news-landing-page';
 
 
 export const routes: Routes = [
@@ -16,7 +17,13 @@ export const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'news',
+    component: NewsLandingPageContainer,
+    resolve: [],
+    pathMatch: 'full'
+  },
+  {
     path: '**',
-    redirectTo: 'login'
+    redirectTo: 'news'
   }
 ];

@@ -37,6 +37,7 @@ import { combineReducers } from '@ngrx/store';
  * notation packages up all of the exports into a single object.
  */
 import * as fromApplication from './application.reducer';
+import * as fromNews from './news.reducer';
 
 
 /**
@@ -45,6 +46,7 @@ import * as fromApplication from './application.reducer';
  */
 export interface State {
   application: fromApplication.State;
+  news: fromNews.State
 }
 
 /**
@@ -56,6 +58,7 @@ export interface State {
  */
 const reducers = {
   application: fromApplication.reducer,
+  news: fromNews.reducer
 };
 
 const developmentReducer: ActionReducer<State> = compose(storeFreeze, combineReducers)(reducers);
@@ -103,4 +106,10 @@ export function reducer(state: any, action: any) {
 // Application State and Selectors
 export const getApplicationState = (state: State) => state.application;
 export const getApplicationLoadingMaskState = createSelector(getApplicationState, fromApplication.getApplicationLoadingMaskState);
+
+// News State and selectors
+export const getNewsState = (state: State) => state.news;
+export const getNewsCollection = createSelector(getNewsState, fromNews.getNewsCollection);
+
+
 

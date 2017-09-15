@@ -18,11 +18,12 @@ import { AppContainer } from './containers/app';
 
 // Container Modules
 import { LoginModule } from './containers/login';
+import { NewsLandingPageModule } from './containers/news-landing-page';
 
 
 // Services
-// import {} from './services';
-const SERVICES = [];
+import { NewsService } from './services';
+const SERVICES = [ NewsService ];
 
 // Routes, Guards, Resolves
 import { routes } from './routes';
@@ -34,8 +35,10 @@ const RESOLVES = [];
 
 // Effects
 import { EffectsModule } from '@ngrx/effects';
-// import {} from './effects';
-const EFFECTS = [];
+import { NewsEffects } from './effects';
+const EFFECTS = [
+  EffectsModule.run(NewsEffects)
+];
 
 // Reducers
 import { reducer } from './reducers';
@@ -56,6 +59,7 @@ import { reducer } from './reducers';
      * to mount the root component associated with this content
      */
     LoginModule,
+    NewsLandingPageModule,
 
     /**
      * StoreModule.provideStore is imported once in the root module, accepting a reducer
