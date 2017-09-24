@@ -22,7 +22,6 @@ export class NewsEffects {
   /**
    * Fetch News collection data
    * @success: fire off customer data action
-   * @error: ???
    */
   @Effect()
   requestNewsCollection$: Observable<Action> = this.actions$
