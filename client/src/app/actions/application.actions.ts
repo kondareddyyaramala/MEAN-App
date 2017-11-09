@@ -2,7 +2,7 @@ import { Action } from '@ngrx/store';
 import { type } from './util';
 
 export const actionTypes = {
-  APPLICATION_MASK_LOADING:            type('[Application] Application Mask Loading'),
+  APPLICATION_MASK_LOADING:      type('[Application] Application Mask Loading'),
 };
 
 /**
